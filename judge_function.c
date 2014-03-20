@@ -20,10 +20,16 @@ int compiler(MYSQL *conn,Submits *submit)
 	{
 		sprintf(path,"./src/cc/%d.cpp",submit->solution_id);
 		FILE *code;
-		if ((code = fopen(path,"wb")) == NULL)
+		//mode_t f_attrib;
+		if(access(path,F_OK) == 0)//file is exit
 		{
-			fprintf(stderr,"can't open file\n");
-			return 0;
+			puts("file is exit");
+		}
+		else 
+		{
+			puts("no__");
+			creat(path,0666);
+			printf("file create %s\n",path);
 		}
 	}
 	else if(submit->language == 3)
