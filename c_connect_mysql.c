@@ -1,25 +1,36 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <mysql.h>
-char *Host = "localhost";
-char *Name = "root";
-char *Passwd = "root";
-char *Database = "acm";
-MYSQL *conn;
-int Port = 3306;
-int main()
+
+#define DEBUG
+//char *Host = "localhost";
+//char *Name = "root";
+//char *Passwd = "root";
+//char *Database = "acm";
+//MYSQL *conn;
+//int Port = 3306;
+
+int mysql_connect(MYSQL*conn,char*Host,char*Name,char*Passwd,char*Database,int Port)
 {
 	conn = mysql_init(NULL);
-	if (!conn)
+	if(!conn)
 	{
-		fprintf(stderr,"mysql_init failed\n");
+	#ifdef DEBUG
+		printf("mysql init failed\n");
+	#endif
 		return EXIT_FAILURE;
 	}
 	conn = mysql_real_connect(conn,Host,Name,Passwd,Database,Port,NULL,0);
+	#ifdef DEBUG
 	if(conn)
-		printf("connect success\n");
-	else
-		printf("connect failed\n");
-	mysql_close(conn);
-	return EXIT_SUCCESS;
+		{
+			puts("connect success!");
+		}
+	else 
+		puts("connect failed!");
+	#endif
+	if(conn)
+		return 1;
+	else 
+		return 0;
 }
