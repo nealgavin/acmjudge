@@ -20,7 +20,8 @@ int main(int agrs,char*arg[])
 	{
 		onlinejudge(conn);
 		#ifdef DEBUG
-		pause();
+		puts("another judge!");
+		sleep(1);
 		#endif
 	}
 	return 1;

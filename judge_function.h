@@ -12,12 +12,15 @@
 #define MLE 4
 #define WA 5
 #define RE 6
+#define OLT 7
 #define STATUS_SIG 7
+#define CE 8
 #define STATUS_AC 8
 #define RUNNING 9
 #define COMPLIERING 10
 #define SYSTEM_ERR 11
 #define RF 12
+#define _SYSCALL_NUM 340
 
 typedef struct{
 	int solution_id;
