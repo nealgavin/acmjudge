@@ -1,0 +1,1 @@
+./src/cc/8446.cpp:1: error: expected unqualified-id before numeric constant

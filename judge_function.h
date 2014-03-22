@@ -32,3 +32,4 @@ typedef struct{
 	int language,result,num;
 }Submits;
 int compiler(MYSQL *conn,Submits *submit);
+void update_submit_status(MYSQL *conn,Submits *submit);

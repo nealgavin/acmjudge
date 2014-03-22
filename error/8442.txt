@@ -1,0 +1,4 @@
+./src/cc/8442.cpp:1:10: error: #include expects "FILENAME" or <FILENAME>
+./src/cc/8442.cpp: In function ‘int main()’:
+./src/cc/8442.cpp:6: error: ‘scanf’ was not declared in this scope
+./src/cc/8442.cpp:7: error: ‘printf’ was not declared in this scope

@@ -1,0 +1,4 @@
+./src/cc/8440.cpp:7: error: missing terminating " character
+./src/cc/8440.cpp:8: error: missing terminating " character
+./src/cc/8440.cpp: In function ‘int main()’:
+./src/cc/8440.cpp:9: error: expected primary-expression before ‘return’
