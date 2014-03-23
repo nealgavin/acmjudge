@@ -1,0 +1,3 @@
+./src/cc/8498.cpp: In function ‘int main()’:
+./src/cc/8498.cpp:5: error: expected initializer before ‘scanf’
+./src/cc/8498.cpp:6: error: ‘b’ was not declared in this scope

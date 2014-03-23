@@ -105,22 +105,54 @@ int check_char(char ch)
 int compare_data(FILE *std,FILE *user)
 {
 	char a,b;
-	int  result = 0;
 	int a_end = 0,b_end = 0,pe = 0;
 	while(true)
 	{
-		if(a_end == 0 && (a=fgetc(std)) == EOF)
+		if((a=fgetc(std)) == EOF)
 		{
 			a_end = 1;
 		}
-		if(b_end == 0 && (b=fgetc(user)) == EOF)
+		if((b=fgetc(user)) == EOF)
 		{
 			b_end = 1;
 		}
 		if(a_end && b_end)
 			break;
+			printf("std-%d-",a);
+		putchar(a);
+			putchar('-');
+			printf("usr-%d-",b);
+		putchar(b);
+			putchar('-');
 		if(a != b)
 		{
+			puts("\nno");
+		}
+		else
+			puts("\nyse");
+		if(a_end)
+		{
+			pe = 1;
+			while((b=fgetc(user))!=EOF)
+			{
+				if(check_char(b));
+					return WA;
+			}
+			break;
+		}
+		if(b_end)
+		{
+			pe = 1;
+			while((a=fgetc(std))!=EOF)
+			{
+				if(check_char(a))
+					return WA;
+			}
+			break;
+		}
+		if(a != b)
+		{
+			pe = 1;
 			if(check_char(a))
 			{
 				if(check_char(b))
@@ -141,14 +173,27 @@ int compare_data(FILE *std,FILE *user)
 						return WA;
 				}
 			}
-		 
+			else if (check_char(b))
+			{
+				while(true)
+				{
+					if((a=fgetc(std))==EOF)
+					{
+						a_end = 1;
+						return WA;
+					}
+					if(check_char(a))
+						break;
+				}
+				if(a != b)
+				return WA;
+			}
 		}
-			return WA;
 	}
-	if(feof(std)&&feof(user))
+	if(pe == 0)
 		return AC;
 	else 
-		return WA;
+		return PE;
 }
 
 void run_exe_and_check(MYSQL *conn,Submits *submit)

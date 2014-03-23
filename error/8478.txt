@@ -1,0 +1,8 @@
+./src/cc/8478.cpp:1:10: error: #include expects "FILENAME" or <FILENAME>
+./src/cc/8478.cpp:7:12: warning: missing terminating " character
+./src/cc/8478.cpp:7: error: missing terminating " character
+./src/cc/8478.cpp:8:1: warning: missing terminating " character
+./src/cc/8478.cpp:8: error: missing terminating " character
+./src/cc/8478.cpp: In function ‘int main()’:
+./src/cc/8478.cpp:6: error: ‘scanf’ was not declared in this scope
+./src/cc/8478.cpp:9: error: expected primary-expression before ‘return’
