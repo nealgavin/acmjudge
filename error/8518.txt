@@ -1,0 +1,1 @@
+./src/cc/8518.cpp:3: error: expected initializer before ‘int’

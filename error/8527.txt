@@ -1,0 +1,3 @@
+./src/cc/8527.cpp:2: error: size of array ‘f’ is too large
+./src/cc/8527.cpp: In function ‘int main()’:
+./src/cc/8527.cpp:7: error: ‘f’ was not declared in this scope
